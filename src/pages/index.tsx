@@ -12,12 +12,10 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
+        <h1 className={`hero__title ${styles.topBannerTitleText}`}>{siteConfig.title}</h1>
         <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-              让我们用不到5分钟⏱️的时间来探索 Docusaurus。
+          <Link className="button button--secondary button--lg" to="/docs/intro">
+            让我们用不到5分钟⏱️的时间来探索 Docusaurus。
           </Link>
         </div>
       </div>
@@ -28,9 +26,7 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+    <Layout title={`${siteConfig.title}`} description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
